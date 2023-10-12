@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Usuario {
 
-    private Long id;
+    private int id_user;
 
     private String nombre;
 
@@ -13,18 +13,18 @@ public class Usuario {
 
     private String email;
 
-    private String password;
+    private String pass;
 
     private String rol;
 
-    private Date fechaCreacion;
+    private Date fecha_creacion;
 
-    public Long getId() {
-        return id;
+    public int getId_user() {
+        return id_user;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId_user(int id_user) {
+        this.id_user = id_user;
     }
 
     public String getNombre() {
@@ -51,12 +51,12 @@ public class Usuario {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPass() {
+        return pass;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPass(String pass) {
+        this.pass = pass;
     }
 
     public String getRol() {
@@ -67,11 +67,11 @@ public class Usuario {
         this.rol = rol;
     }
 
-    public Date getFechaCreacion() {
-        return fechaCreacion;
+    public Date getFecha_creacion() {
+        return fecha_creacion;
     }
 
-    public void setFechaCreacion(Date fechaCreacion) {
-        this.fechaCreacion = fechaCreacion;
+    public void setFecha_creacion(Date fecha_creacion) {
+        this.fecha_creacion = fecha_creacion;
     }
 }
