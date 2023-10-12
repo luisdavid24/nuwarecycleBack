@@ -3,9 +3,9 @@ package com.nuwarecycle.nuwarecycle.models;
 import java.util.Date;
 public class Pedidos {
 
-    private long id_pedido;
+    private int id_pedido;
 
-    private long usuario_id;
+    private int usuario_id;
 
     private Date fecha_creacion;
 
