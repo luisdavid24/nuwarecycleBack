@@ -3,7 +3,7 @@ package com.nuwarecycle.nuwarecycle.models;
 import java.util.Date;
 
 public class Productos {
-    private Long id;
+    private int id_prod;
 
     private String nombre;
 
@@ -12,18 +12,18 @@ public class Productos {
 
     private float precio;
 
-    private String img;
+    private String imagen;
 
     private String categoria;
 
     private int stock;
 
-    public Long getId() {
-        return id;
+    public int getId_prod() {
+        return id_prod;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId_prod(int id_prod) {
+        this.id_prod = id_prod;
     }
 
     public String getNombre() {
@@ -50,12 +50,12 @@ public class Productos {
         this.precio = precio;
     }
 
-    public String getImg() {
-        return img;
+    public String getImagen() {
+        return imagen;
     }
 
-    public void setImg(String img) {
-        this.img = img;
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 
     public String getCategoria() {
