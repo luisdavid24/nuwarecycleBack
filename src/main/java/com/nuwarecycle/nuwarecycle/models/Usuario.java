@@ -1,22 +1,33 @@
 package com.nuwarecycle.nuwarecycle.models;
 
+import jakarta.persistence.*;
+
 import java.util.Date;
 
+@Entity
 public class Usuario {
 
+    @Column(name="id_user")
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id_user;
 
+    @Column(name="nombre")
     private String nombre;
 
+    @Column(name="apellido")
     private String apellido;
 
-
+    @Column(name="email")
     private String email;
 
+    @Column(name="pass")
     private String pass;
 
+    @Column(name="rol")
     private String rol;
 
+    @Column(name="fecha_creacion")
     private Date fecha_creacion;
 
     public int getId_user() {
