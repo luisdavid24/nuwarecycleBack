@@ -8,7 +8,7 @@ import lombok.Data;
 @Table(name = "products")
 @Data
 public class Product {
-    private int id_prod;
+    private int idProd;
 
     private String name;
 
