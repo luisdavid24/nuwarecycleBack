@@ -1,4 +1,4 @@
-package com.nuwarecycle.nuwarecycle.controller;
+package com.nuwarecycle.nuwarecycle.controllers;
 
 
 import com.nuwarecycle.nuwarecycle.dao.UsuarioDao;
