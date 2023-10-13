@@ -1,20 +1,34 @@
-package nuwarecycleBack.src.main.java.com.nuwarecycle.nuwarecycle.models;
+package com.nuwarecycle.nuwarecycle.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
 @Entity
-@Table(name = "orderDetails")
+@Table(name = "order_details")
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class OrderDetail {
-    private int IdOrderDetails;
 
-    private int OrderId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
-    private int productId;
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    @NonNull
+    private Product product;
 
+    @Column(name = "amount",nullable = false )
+    @NonNull
     private int amount;
 
+    @Column(name = "total_price", nullable = false)
+    @NonNull
     private float price;
+
 }
