@@ -1,7 +1,6 @@
 package com.nuwarecycle.nuwarecycle.controllers;
-
-import com.nuwarecycle.nuwarecycle.models.User;
-import com.nuwarecycle.nuwarecycle.services.UserService;
+import com.nuwarecycle.nuwarecycle.models.Donation;
+import com.nuwarecycle.nuwarecycle.services.DonationService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,11 +10,11 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/api/v1/users")
-public class UserController {
-    private final UserService userService;
+@RequestMapping("/api/v1/donations")
+public class DonationController {
+    private final DonationService donationService;
     @GetMapping("")
-    public List<User> getAllUsers(){
-        return userService.getAllUsers();
+    public List<Donation> getAllDonations(){
+        return donationService.getAllDonations();
     }
 }

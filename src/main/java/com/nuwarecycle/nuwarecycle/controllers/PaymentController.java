@@ -1,7 +1,6 @@
 package com.nuwarecycle.nuwarecycle.controllers;
-
-import com.nuwarecycle.nuwarecycle.models.User;
-import com.nuwarecycle.nuwarecycle.services.UserService;
+import com.nuwarecycle.nuwarecycle.models.Payment;
+import com.nuwarecycle.nuwarecycle.services.PaymentService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,11 +10,11 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/api/v1/users")
-public class UserController {
-    private final UserService userService;
+@RequestMapping("/api/v1/payment")
+public class PaymentController {
+    private final PaymentService paymentService;
     @GetMapping("")
-    public List<User> getAllUsers(){
-        return userService.getAllUsers();
+    public List<Payment> getAllPayments(){
+        return  paymentService.getAllPayments();
     }
 }

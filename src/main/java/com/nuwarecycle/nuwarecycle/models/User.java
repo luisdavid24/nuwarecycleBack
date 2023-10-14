@@ -40,9 +40,9 @@ public class User {
     @NonNull
     private LocalDateTime registrationDate;
 
-    @Column(name = "description", length = 400, nullable = false)
+    @Column(name = "rol", length = 400, nullable = false)
     @NonNull
-    private String description;
+    private String rol;
 
     @Column(name = "user_img", length = 100, nullable = false)
     @NonNull
