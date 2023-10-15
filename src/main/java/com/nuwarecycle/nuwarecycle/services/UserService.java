@@ -5,4 +5,5 @@ import com.nuwarecycle.nuwarecycle.models.User;
 public interface UserService {
     List<User> getAllUsers();
 
+    void CreateUser(User user);
 }

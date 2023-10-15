@@ -1,10 +1,12 @@
 package com.nuwarecycle.nuwarecycle.services;
 import com.nuwarecycle.nuwarecycle.models.Order;
-import com.nuwarecycle.nuwarecycle.models.Payment;
 import com.nuwarecycle.nuwarecycle.repositories.OrderRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 
 @AllArgsConstructor
@@ -15,4 +17,13 @@ public class OrderServiceImp implements OrderService{
     public List<Order> getAllOrders(){
         return orderRepo.findAll();
     }
+
+    @Override
+    public void CreateOrder(Order order){
+        LocalDate Orderdate = LocalDate.now();
+        LocalTime Ordertime = LocalTime.now();
+        order.setCreationDate(LocalDateTime.of(Orderdate,Ordertime));
+        orderRepo.save(order);
+    }
+
 }

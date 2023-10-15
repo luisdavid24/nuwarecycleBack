@@ -48,5 +48,3 @@ public class User {
     @NonNull
     private String profileImg;
 }
-
-//Eyy mani organiza pues esa mondá pero rápido vale, no te hagas pelar
