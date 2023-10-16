@@ -28,5 +28,16 @@ public class ProductServiceImp implements ProductService{
         }
         return false;
     }
+    @Override
+    public void updateProduct(Product product){
+        Product existingProduct = new Product();
+        Product newProduct = new Product();
+        existingProduct = getProductById(existingProduct.getIdProd());
+        existingProduct.setName(newProduct.getName());
+        existingProduct.setImage(newProduct.getImage());
+        existingProduct.setPrice(newProduct.getPrice());
+        existingProduct.setDescription(newProduct.getDescription());
+        existingProduct.setStock(newProduct.getStock());
+    }
 
 }

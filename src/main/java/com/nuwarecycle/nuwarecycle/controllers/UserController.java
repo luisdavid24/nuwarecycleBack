@@ -16,10 +16,11 @@ public class UserController {
     public List<User> getAllUsers(){
         return userService.getAllUsers();
     }
-
     @PostMapping("")
     public void createUser(@RequestBody User newUser){
         userService.createUser(newUser);
     }
 
+    @PutMapping("/api/v1/users/{id}")
+    public void updateUser(@RequestBody User updateUser){userService.updateUser(updateUser);}
 }

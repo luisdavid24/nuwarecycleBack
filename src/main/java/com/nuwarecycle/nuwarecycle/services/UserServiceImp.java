@@ -37,5 +37,16 @@ public class UserServiceImp implements UserService{
     public void deleteUser(Long id) {
         userRepo.deleteUserById(id);
     }
+    @Override
+    public void updateUser(User user){
+        User existingUser = new User();
+        User newUser = new User();
+        existingUser = getUserById(existingUser.getId());
+        existingUser.setUsername(newUser.getUsername());
+        existingUser.setPassword(newUser.getPassword());
+        existingUser.setProfileImg(newUser.getProfileImg());
+        existingUser.setEmail(newUser.getEmail());
+        userRepo.save(existingUser);
+    }
 
 }

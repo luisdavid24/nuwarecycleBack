@@ -23,4 +23,7 @@ public class ProductController {
         productService.deleteProductById(idProd);
     }
 
+    @PutMapping("")
+    public void updateProduct(@RequestBody Product updateProduct){productService.updateProduct(updateProduct);}
+
 }
