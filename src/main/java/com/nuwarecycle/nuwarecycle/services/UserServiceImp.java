@@ -29,9 +29,13 @@ public class UserServiceImp implements UserService{
     }
 
     @Override
-    public User getOneById(Long id) {
-        return userRepo.findOneById(id).orElse(null);
-        //COMO VAMOS BB
+    public User getUserById(Long id) {
+        return userRepo.findUserById(id);
+    }
+
+    @Override
+    public void deleteUser(Long id) {
+        userRepo.deleteUserById(id);
     }
 
 }
