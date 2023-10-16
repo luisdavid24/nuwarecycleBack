@@ -47,4 +47,5 @@ public class User {
     @Column(name = "user_img", length = 100, nullable = false)
     @NonNull
     private String profileImg;
+
 }

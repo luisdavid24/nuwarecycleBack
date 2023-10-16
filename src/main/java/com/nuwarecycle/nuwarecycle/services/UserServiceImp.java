@@ -20,12 +20,17 @@ public class UserServiceImp implements UserService{
     }
 
     @Override
-    public void CreateUser(User user) {
+    public void createUser(User user) {
         LocalDate date = LocalDate.now();
         LocalTime time = LocalTime.now();
         user.setRegistrationDate(LocalDateTime.of(date,time));
         user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
         userRepo.save(user);
+    }
+
+    @Override
+    public User getOneById(Long id) {
+        return userRepo.findOneById(id).orElse(null);
     }
 
 }

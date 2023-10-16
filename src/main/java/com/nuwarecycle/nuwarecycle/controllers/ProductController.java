@@ -2,9 +2,7 @@ package com.nuwarecycle.nuwarecycle.controllers;
 import com.nuwarecycle.nuwarecycle.models.Product;
 import com.nuwarecycle.nuwarecycle.services.ProductService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,4 +16,11 @@ public class ProductController {
     public List<Product> getAllProducts(){
         return productService.getAllProducts();
     }
+
+    @PostMapping("/api/v1/products/{idProd}")
+    public void deleteProduct(@RequestBody Product product){
+        int idProd = product.getIdProd();
+        productService.deleteProductById(idProd);
+    }
+
 }

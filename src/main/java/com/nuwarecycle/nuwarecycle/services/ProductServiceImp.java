@@ -14,4 +14,19 @@ public class ProductServiceImp implements ProductService{
     public List<Product> getAllProducts(){
         return productRepo.findAll();
     }
+
+    @Override
+    public Product getProductById(int idProd) {
+        return productRepo.findById(idProd).orElse(null);
+    }
+
+    @Override
+    public boolean deleteProductById(int idProd) {
+        if (productRepo.existsById(idProd)) {
+            productRepo.deleteById(idProd);
+            return true;
+        }
+        return false;
+    }
+
 }

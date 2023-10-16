@@ -5,5 +5,10 @@ import com.nuwarecycle.nuwarecycle.models.User;
 public interface UserService {
     List<User> getAllUsers();
 
-    void CreateUser(User user);
+    void createUser(User user);
+
+
+    User getUserById(Long id);
+
+    User getOneById(Long id);
 }

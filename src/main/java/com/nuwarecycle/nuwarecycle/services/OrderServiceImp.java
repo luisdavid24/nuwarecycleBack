@@ -19,7 +19,7 @@ public class OrderServiceImp implements OrderService{
     }
 
     @Override
-    public void CreateOrder(Order order){
+    public void createOrder(Order order){
         LocalDate Orderdate = LocalDate.now();
         LocalTime Ordertime = LocalTime.now();
         order.setCreationDate(LocalDateTime.of(Orderdate,Ordertime));
