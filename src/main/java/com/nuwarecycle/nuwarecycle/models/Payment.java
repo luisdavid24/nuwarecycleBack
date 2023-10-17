@@ -16,8 +16,11 @@ public class Payment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idPayment;
 
+    @OneToOne
+    @JoinColumn(name = "orderDetail_id")
+    private OrderDetail orderDetail;
+
     @Column(name = "payment_method", length = 100, nullable = false)
     private String PaymentMethod;
 
-    private int OrderDetailsId;
 }
