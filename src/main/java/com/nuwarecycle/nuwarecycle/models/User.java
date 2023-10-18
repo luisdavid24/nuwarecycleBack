@@ -37,7 +37,6 @@ public class User {
     private String email;
 
     @Column(name = "date")
-    @NonNull
     private LocalDateTime registrationDate;
 
     @Column(name = "rol", length = 400, nullable = false)
