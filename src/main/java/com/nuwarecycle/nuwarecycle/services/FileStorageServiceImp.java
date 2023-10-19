@@ -17,18 +17,19 @@ import java.nio.file.StandardCopyOption;
 
 @Service
 public class FileStorageServiceImp implements FileStorageService{
+
     @Value("${media.location}")
     private String mediaLocation;
 
     private Path rootLocation;
     @Override
+    @PostConstruct
     public void init() throws IOException {
         rootLocation = Paths.get(mediaLocation);
         Files.createDirectories(rootLocation);
     }
 
     @Override
-    @PostConstruct
     public String store(MultipartFile file) {
         try {
             if (file.isEmpty())
