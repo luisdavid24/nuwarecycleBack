@@ -2,9 +2,7 @@ package com.nuwarecycle.nuwarecycle.controllers;
 import com.nuwarecycle.nuwarecycle.models.OrderDetail;
 import com.nuwarecycle.nuwarecycle.services.OrderDetailService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,5 +14,10 @@ public class OrderDetailController {
     @GetMapping("")
     public List<OrderDetail> getAllOrderDetails(){
         return orderDetailService.getAllOrderDetails();
+    }
+
+    @PostMapping("/create")
+    public void createOrderDetail(@RequestBody OrderDetail newOrderDetail){
+        orderDetailService.createOrderDetail(newOrderDetail);
     }
 }

@@ -22,6 +22,11 @@ public class Order {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @ManyToOne
+    @JoinColumn(name= "orderDetail_id")
+    private OrderDetail orderDetail;
+
+
     @Column(name = "creationDate", length = 100, nullable = false)
     private Date creationDate;
 

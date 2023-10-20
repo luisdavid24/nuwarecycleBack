@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface OrderDetailService {
     List<OrderDetail> getAllOrderDetails();
+
+    void createOrderDetail(OrderDetail orderDetail);
 }
