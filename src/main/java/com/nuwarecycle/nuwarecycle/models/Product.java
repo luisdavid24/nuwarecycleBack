@@ -44,4 +44,22 @@ public class Product {
     @Column(name = "stock")
     @NonNull
     private int stock;
+
+    @Column(name = "img1")
+    private String image1;
+
+    @Column(name = "img2")
+    private String image2;
+
+    @Column(name = "img3")
+    private String image3;
+
+    @Column(name = "img4")
+    private String image4;
+
+    @Column(name = "brand")
+    private String brand;
+
+    @Column(name = "rating")
+    private int rating;
 }
