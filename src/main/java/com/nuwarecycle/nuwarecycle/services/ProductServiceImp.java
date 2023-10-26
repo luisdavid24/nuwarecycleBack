@@ -38,6 +38,7 @@ public class ProductServiceImp implements ProductService{
         existingProduct.setPrice(newProduct.getPrice());
         existingProduct.setDescription(newProduct.getDescription());
         existingProduct.setStock(newProduct.getStock());
+        existingProduct.setReview(newProduct.getReview());
     }
 
 }

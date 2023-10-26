@@ -63,5 +63,6 @@ public class Product {
     @Column(name = "rating")
     private int rating;
 
-    //Joa mani
+    @Column(name = "review")
+    private int review;
 }
