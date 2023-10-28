@@ -17,7 +17,8 @@ public class ProductController {
         return productService.getAllProducts();
     }
 
-    @PostMapping("/api/v1/products/{idProd}")
+    //ESTE METODO ESTÁ MAL HECHO, LUEGO LO CORRIJO
+    @DeleteMapping("/{idProd}")
     public void deleteProduct(@RequestBody Product product){
         int idProd = product.getIdProd();
         productService.deleteProductById(idProd);
@@ -26,4 +27,8 @@ public class ProductController {
     @PutMapping("")
     public void updateProduct(@RequestBody Product updateProduct){productService.updateProduct(updateProduct);}
 
+    @GetMapping("/category/{categoryId}")
+    public List<Product> getProductsByCategory(@PathVariable String categoryId) {
+        return productService.getProductsByCategory(categoryId);
+    }
 }
