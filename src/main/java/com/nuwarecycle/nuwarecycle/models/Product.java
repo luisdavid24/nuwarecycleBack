@@ -62,7 +62,4 @@ public class Product {
 
     @Column(name = "rating")
     private int rating;
-
-    @Column(name = "review")
-    private int review;
 }
