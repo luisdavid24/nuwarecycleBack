@@ -9,7 +9,9 @@ public interface ProductService {
 
     Product getProductById(int idProd);
 
-    boolean deleteProductById(int idProd);
+    void deleteProductById(int idProd);
 
     void updateProduct(Product product);
+
+    List<Product> getProductsByCategory(String category);
 }

@@ -21,12 +21,10 @@ public class ProductServiceImp implements ProductService{
     }
 
     @Override
-    public boolean deleteProductById(int idProd) {
+    public void deleteProductById(int idProd) {
         if (productRepo.existsById(idProd)) {
             productRepo.deleteById(idProd);
-            return true;
         }
-        return false;
     }
     @Override
     public void updateProduct(Product product){
@@ -39,6 +37,11 @@ public class ProductServiceImp implements ProductService{
         existingProduct.setDescription(newProduct.getDescription());
         existingProduct.setStock(newProduct.getStock());
         existingProduct.setReview(newProduct.getReview());
+    }
+
+    @Override
+    public List<Product> getProductsByCategory(String category) {
+        return productRepo.findByCategory(category);
     }
 
 }
