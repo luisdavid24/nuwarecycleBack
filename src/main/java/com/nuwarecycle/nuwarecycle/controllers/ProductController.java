@@ -31,4 +31,17 @@ public class ProductController {
     public List<Product> getProductsByCategory(@PathVariable String categoryId) {
         return productService.getProductsByCategory(categoryId);
     }
+
+    @GetMapping("/price")
+    public List<Product> getProductsBetweenPrice(
+            @RequestParam("min") int min,
+            @RequestParam("max") int max
+    ){
+        return productService.getProductsBetweenPrice(min, max);
+    }
+
+    @GetMapping("/brand")
+    public List<Product> getProductsByBrands(@RequestParam("brands") List<String> brands){
+        return productService.getProductsByBrands(brands);
+    }
 }
