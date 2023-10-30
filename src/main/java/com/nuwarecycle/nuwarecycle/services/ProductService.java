@@ -14,4 +14,8 @@ public interface ProductService {
     void updateProduct(Product product);
 
     List<Product> getProductsByCategory(String category);
+
+    List<Product> getProductsByBrands(List<String> brands);
+
+    List<Product> getProductsBetweenPrice(int min, int max);
 }

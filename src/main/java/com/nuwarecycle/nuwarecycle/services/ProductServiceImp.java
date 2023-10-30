@@ -36,12 +36,22 @@ public class ProductServiceImp implements ProductService{
         existingProduct.setPrice(newProduct.getPrice());
         existingProduct.setDescription(newProduct.getDescription());
         existingProduct.setStock(newProduct.getStock());
-        existingProduct.setReview(newProduct.getReview());
     }
 
     @Override
     public List<Product> getProductsByCategory(String category) {
         return productRepo.findByCategory(category);
     }
+
+    @Override
+    public List<Product> getProductsByBrands(List<String> brands) {
+        return productRepo.findByBrandIn(brands);
+    }
+
+    @Override
+    public List<Product> getProductsBetweenPrice(int min, int max) {
+        return productRepo.findByPriceIsBetween(min,max);
+    }
+
 
 }
