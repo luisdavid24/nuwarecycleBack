@@ -21,6 +21,11 @@ public class ProductServiceImp implements ProductService{
     }
 
     @Override
+    public void createProduct(Product product) {
+        productRepo.save(product);
+    }
+
+    @Override
     public void deleteProductById(int idProd) {
         if (productRepo.existsById(idProd)) {
             productRepo.deleteById(idProd);
@@ -32,7 +37,7 @@ public class ProductServiceImp implements ProductService{
         Product newProduct = new Product();
         existingProduct = getProductById(existingProduct.getIdProd());
         existingProduct.setName(newProduct.getName());
-        existingProduct.setImage(newProduct.getImage());
+        //existingProduct.setImage(newProduct.getImage());
         existingProduct.setPrice(newProduct.getPrice());
         existingProduct.setDescription(newProduct.getDescription());
         existingProduct.setStock(newProduct.getStock());

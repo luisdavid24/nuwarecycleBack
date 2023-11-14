@@ -9,6 +9,8 @@ public interface ProductService {
 
     Product getProductById(int idProd);
 
+    void createProduct(Product product);
+
     void deleteProductById(int idProd);
 
     void updateProduct(Product product);

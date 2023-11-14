@@ -33,10 +33,6 @@ public class Product {
     @NonNull
     private float price;
 
-    @Column(name = "image", length = 100, nullable = false)
-    @NonNull
-    private String image;
-
     @Column(name = "category", length = 100, nullable = false)
     @NonNull
     private String category;
@@ -60,6 +56,6 @@ public class Product {
     @Column(name = "brand")
     private String brand;
 
-    @Column(name = "rating")
-    private int rating;
+    //@Column(name = "rating")
+    // private int rating;
 }

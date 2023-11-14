@@ -9,6 +9,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
+import java.util.Optional;
+
 @AllArgsConstructor
 @Service
 public class UserServiceImp implements UserService{
@@ -24,7 +26,7 @@ public class UserServiceImp implements UserService{
         LocalDate date = LocalDate.now();
         LocalTime time = LocalTime.now();
         user.setRegistrationDate(LocalDateTime.of(date,time));
-        //user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
+        user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
         userRepo.save(user);
     }
 
@@ -37,6 +39,12 @@ public class UserServiceImp implements UserService{
     public void deleteUser(Long id) {
         userRepo.deleteUserById(id);
     }
+
+    @Override
+    public Optional<User> findOneByEmail(String email) {
+        return userRepo.findOneByEmail(email);
+    }
+
     @Override
     public void updateUser(User user){
         User existingUser = new User();

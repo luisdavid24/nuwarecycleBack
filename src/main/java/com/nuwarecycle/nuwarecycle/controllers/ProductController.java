@@ -9,12 +9,18 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/v1/products")
+@CrossOrigin("*")
 public class ProductController {
     private final ProductService productService;
 
     @GetMapping("")
     public List<Product> getAllProducts(){
         return productService.getAllProducts();
+    }
+
+    @PostMapping("")
+    public void addProduct(@RequestBody Product product){
+        productService.createProduct(product);
     }
 
     //ESTE METODO ESTÁ MAL HECHO, LUEGO LO CORRIJO
@@ -24,8 +30,6 @@ public class ProductController {
         productService.deleteProductById(idProd);
     }
 
-    @PutMapping("")
-    public void updateProduct(@RequestBody Product updateProduct){productService.updateProduct(updateProduct);}
 
     @GetMapping("/category/{categoryId}")
     public List<Product> getProductsByCategory(@PathVariable String categoryId) {

@@ -28,4 +28,9 @@ public class UserController {
     public void deleteUser(@PathVariable Long id){
         userService.deleteUser(id);
     }
+
+    @GetMapping("byEmail/{email}")
+    public User getUserByEmail(@PathVariable String email){
+        return userService.findOneByEmail(email).orElse(null);
+    }
 }
