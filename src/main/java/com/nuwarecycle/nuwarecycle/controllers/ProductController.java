@@ -18,6 +18,11 @@ public class ProductController {
         return productService.getAllProducts();
     }
 
+    @GetMapping("/{name}")
+    public Product getProductByName(@PathVariable String name){
+        return productService.getProductByName(name);
+    }
+
     @PostMapping("")
     public void addProduct(@RequestBody Product product){
         productService.createProduct(product);
@@ -31,9 +36,9 @@ public class ProductController {
     }
 
 
-    @GetMapping("/category/{categoryId}")
-    public List<Product> getProductsByCategory(@PathVariable String categoryId) {
-        return productService.getProductsByCategory(categoryId);
+    @GetMapping("/category")
+    public List<Product> getProductsByCategory(@RequestParam("category") String category){
+        return productService.getProductsByCategory(category);
     }
 
     @GetMapping("/price")
@@ -44,7 +49,7 @@ public class ProductController {
         return productService.getProductsBetweenPrice(min, max);
     }
 
-    @GetMapping("/brand")
+    @GetMapping("/brands")
     public List<Product> getProductsByBrands(@RequestParam("brands") List<String> brands){
         return productService.getProductsByBrands(brands);
     }
