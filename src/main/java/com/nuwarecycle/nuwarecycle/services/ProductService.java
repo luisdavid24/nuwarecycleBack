@@ -9,6 +9,8 @@ public interface ProductService {
 
     Product getProductById(int idProd);
 
+    Product getProductByName(String name);
+
     void createProduct(Product product);
 
     void deleteProductById(int idProd);
