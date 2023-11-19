@@ -21,6 +21,11 @@ public class ProductServiceImp implements ProductService{
     }
 
     @Override
+    public Product getProductByName(String name) {
+        return productRepo.findFirstByName(name);
+    }
+
+    @Override
     public void createProduct(Product product) {
         productRepo.save(product);
     }
