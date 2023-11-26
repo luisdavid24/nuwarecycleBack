@@ -24,11 +24,9 @@ public class OrderDetail {
     private Product product;
 
     @Column(name = "amount",nullable = false )
-    @NonNull
     private int amount;
 
     @Column(name = "total_price", nullable = false)
-    @NonNull
     private float price;
 
 }

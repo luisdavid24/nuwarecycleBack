@@ -4,6 +4,7 @@ import com.nuwarecycle.nuwarecycle.services.ProductService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -52,5 +53,14 @@ public class ProductController {
     @GetMapping("/brands")
     public List<Product> getProductsByBrands(@RequestParam("brands") List<String> brands){
         return productService.getProductsByBrands(brands);
+    }
+
+    @GetMapping("/random")
+    public List<Product> getRandomProducts(){
+        List<Product> products = productService.getAllProducts();
+
+        Collections.shuffle(products);
+
+        return products.subList(0, 5);
     }
 }
